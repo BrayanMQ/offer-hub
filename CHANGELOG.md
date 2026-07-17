@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Vitest + Testing Library testing infrastructure, with unit tests for `DocsSearchBar`, `RegistrationForm`, `ContactForm`, `FloatingCTA`, and the `Navbar` `isLinkActive` helper; CI now fails the build on test failure
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
+- Announce `ContactForm` submission errors to screen readers via `role="alert"`
 ### Security
 
 - Add HTTP security headers (CSP, HSTS, X-Frame-Options, and related) via `next.config.ts` for all routes
