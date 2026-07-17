@@ -29,7 +29,7 @@ const navLinks = [
  *     /docs/getting-started).
  *  3. Exact "/" matches only the home route.
  */
-function isLinkActive(href: string, pathname: string): boolean {
+export function isLinkActive(href: string, pathname: string): boolean {
   // Rule 1: hash anchors belong to the home page only
   if (href.includes("#")) return pathname === "/";
 
