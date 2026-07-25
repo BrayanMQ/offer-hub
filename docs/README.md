@@ -14,6 +14,8 @@ OFFER-HUB documentation is intentionally split by **audience**, not duplicated b
 
 Some topics exist in both `/docs/guides/` and `/content/docs/guide/` (e.g. `escrow`, `orders`, `disputes`, `wallets`, `deposits`, `withdrawals`, `security`) — this is deliberate, not drift: the `/docs/` version explains how the Orchestrator implements the feature (state machine, signer roles, internal field names), while the `/content/docs/` version explains how an external integrator calls the public API/SDK. Each of these pairs cross-links to its counterpart at the top of the file so a reader who lands on the wrong audience's doc can find the right one.
 
+Both `/docs/` and `/content/docs/` are indexed by the standalone [`mcp/`](../mcp/README.md) package — an MCP (Model Context Protocol) server that lets AI assistants search and fetch this documentation directly. It's not part of the root npm workspace (there isn't one); it has its own `package.json` and is installed/run independently from `mcp/`.
+
 ## Quick Start
 
 1. **New to the project?** Start with [Project Context](./project-context.md)

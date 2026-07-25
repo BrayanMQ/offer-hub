@@ -72,35 +72,39 @@
 ## 🏗️ Project Structure
 
 ```
-OFFER-HUB-Orchestrator/
-├── apps/
-│   ├── api/          # Main NestJS server (port 4000)
-│   └── worker/       # Async task processor (BullMQ)
-├── packages/
-│   ├── shared/       # Shared code (DTOs, Enums, Utils)
-│   ├── database/     # Prisma schema and migrations
-│   └── sdk/          # Official client SDK for marketplaces
-├── docs/             # Comprehensive documentation
-├── src/              # Legacy Next.js frontend (deprecated)
-└── backend/          # Legacy Express backend (deprecated)
+offer-hub-monorepo/
+├── src/              # Next.js frontend (this app: marketing site + docs website)
+├── backend/          # Standalone Express backend (own package.json, installed separately)
+├── mcp/              # Standalone MCP server exposing docs/ + content/docs/ to AI assistants
+│                     # (own package.json; not an npm workspace — run `npm install` inside mcp/)
+├── content/docs/     # Public docs website content (MDX, rendered at offer-hub.tech/docs)
+├── docs/             # Internal engineering documentation (Markdown, read on GitHub)
+├── config/           # Shared app-level config (e.g. security headers)
+├── scripts/          # Build/codegen scripts (OpenAPI, docs search index)
+└── supabase/         # Supabase schema/config
 ```
+
+The root `package.json` has no `workspaces` field, so `npm install` at the
+repo root only installs the frontend's dependencies. `backend/` and `mcp/`
+are independent packages — each has its own `package.json` and needs its
+own `npm install` (see [`mcp/README.md`](./mcp/README.md) for the MCP
+server's setup and usage).
 
 ## 📚 Documentation
 
 Comprehensive documentation is available in the [`/docs`](./docs/) folder:
 
 ### Quick Start
-- 🧠 **[AI.md](./docs/AI.md)** - Development guide for AI assistants (Read first!)
+- 🧠 **[AI Context](./docs/ai-context.md)** - Development guide for AI assistants (Read first!)
 - 📖 **[Main Documentation](./docs/README.md)** - Complete documentation index
 
 ### Core Documentation
 - 📐 [Architecture Overview](./docs/architecture/overview.md) - System architecture
-- 📋 [Project Overview](./docs/context/project-overview.md) - Vision, goals, and roadmap
-- ❓ [Problem Statement](./docs/context/problem-statement.md) - The problems we solve
-- 👥 [User Personas](./docs/context/user-personas.md) - Who uses OFFER-HUB
+- 📋 [Product Overview](./docs/business/product-overview.md) - Vision, goals, and value proposition
+- 📚 [Use Cases](./docs/business/use-cases.md) - Common marketplace scenarios
 
 ### Development
-- 💻 [Coding Standards](./docs/standards/code-style.md) - Code style guide
+- 💻 [Naming Conventions](./docs/standards/naming-conventions.md) - File, variable, and function naming rules
 - 🔌 [API Design](./docs/backend/api-design.md) - Backend API patterns
 - 🤝 [Contributing Guide](./docs/CONTRIBUTING.md) - How to contribute
 
