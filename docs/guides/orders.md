@@ -2,6 +2,8 @@
 
 > Complete lifecycle of a buy/sell order: creation, escrow, release, refund, and cancellation.
 
+> **Looking for the public API guide?** This is the internal engineering reference (Orchestrator implementation detail). For the external API/SDK guide aimed at integrators, see [`content/docs/guide/orders.mdx`](../../content/docs/guide/orders.mdx).
+
 ---
 
 ## Table of Contents

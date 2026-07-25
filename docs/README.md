@@ -4,12 +4,15 @@ Welcome to the OFFER-HUB documentation. This comprehensive guide covers all aspe
 
 ## Documentation Overview
 
-OFFER-HUB documentation is organized in two locations:
+OFFER-HUB documentation is intentionally split by **audience**, not duplicated by accident:
 
-| Location | Purpose | Format |
-|----------|---------|--------|
-| `/docs/` | Internal developer documentation | Markdown |
-| `/content/docs/` | Public web documentation | MDX (rendered at offer-hub.tech) |
+| Location | Audience | Purpose | Format |
+|----------|----------|---------|--------|
+| `/docs/` | Contributors & maintainers | Internal engineering reference: implementation detail, architecture, standards | Markdown, read directly on GitHub |
+| `/content/docs/` | External developers & integrators | Public docs website: how to use the API/SDK | MDX, rendered at offer-hub.tech/docs |
+| `/src/content/` | End users (legal) | Static legal page copy (privacy policy, terms) | MDX, rendered directly by their page routes — not part of the docs site nav/search |
+
+Some topics exist in both `/docs/guides/` and `/content/docs/guide/` (e.g. `escrow`, `orders`, `disputes`, `wallets`, `deposits`, `withdrawals`, `security`) — this is deliberate, not drift: the `/docs/` version explains how the Orchestrator implements the feature (state machine, signer roles, internal field names), while the `/content/docs/` version explains how an external integrator calls the public API/SDK. Each of these pairs cross-links to its counterpart at the top of the file so a reader who lands on the wrong audience's doc can find the right one.
 
 ## Quick Start
 

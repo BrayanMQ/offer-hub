@@ -2,6 +2,8 @@
 
 > How users send USDC out of the Orchestrator — crypto-native (Stellar) and AirTM flows.
 
+> **Looking for the public API guide?** This is the internal engineering reference (Orchestrator implementation detail). For the external API/SDK guide aimed at integrators, see [`content/docs/guide/withdrawals.mdx`](../../content/docs/guide/withdrawals.mdx).
+
 ---
 
 ## Table of Contents

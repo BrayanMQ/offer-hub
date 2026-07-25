@@ -2,6 +2,8 @@
 
 > Concrete guidance for developers integrating OFFER-HUB into their own marketplaces — covering API key management, webhook validation, wallet security, escrow verification, and blockchain-specific attack mitigations.
 
+> **Looking for the public API guide?** This is the internal engineering reference (Orchestrator implementation detail). For the external API/SDK guide aimed at integrators, see [`content/docs/guide/security.mdx`](../../content/docs/guide/security.mdx).
+
 ---
 
 ## Table of Contents

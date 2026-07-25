@@ -2,6 +2,8 @@
 
 > How OFFER-HUB uses Trustless Work smart contracts on Stellar to hold funds non-custodially.
 
+> **Looking for the public API guide?** This is the internal engineering reference (Orchestrator implementation detail). For the external API/SDK guide aimed at integrators, see [`content/docs/guide/escrow.mdx`](../../content/docs/guide/escrow.mdx).
+
 ---
 
 ## Table of Contents

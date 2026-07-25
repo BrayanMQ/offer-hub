@@ -2,6 +2,8 @@
 
 > How to handle disagreements between buyers and sellers: opening disputes, assigning them to support, and resolving them with FULL_RELEASE, FULL_REFUND, or SPLIT decisions.
 
+> **Looking for the public API guide?** This is the internal engineering reference (Orchestrator implementation detail). For the external API/SDK guide aimed at integrators, see [`content/docs/guide/disputes.mdx`](../../content/docs/guide/disputes.mdx).
+
 ---
 
 ## Table of Contents

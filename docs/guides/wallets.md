@@ -2,6 +2,8 @@
 
 > How OFFER-HUB manages Stellar wallets: invisible keypairs, deposits, signing, and security.
 
+> **Looking for the public API guide?** This is the internal engineering reference (Orchestrator implementation detail). For the external API/SDK guide aimed at integrators, see [`content/docs/guide/wallets.mdx`](../../content/docs/guide/wallets.mdx).
+
 ---
 
 ## Table of Contents
