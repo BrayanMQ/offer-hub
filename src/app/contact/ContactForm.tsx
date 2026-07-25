@@ -11,7 +11,7 @@ interface ContactFormData {
   message: string;
 }
 
-export default function ContactForm() {
+export function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>({
     company: "",
     name: "",

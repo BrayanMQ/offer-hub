@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactForm from "./ContactForm.client";
+import { ContactForm } from "./ContactForm";
 import { buildPageMetadata } from "@/lib/seo";
 
 // Title was "Contact Sales | OFFER-HUB", which the root layout's "%s | OFFER-HUB"

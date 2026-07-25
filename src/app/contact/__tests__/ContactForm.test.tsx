@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import ContactForm from "../ContactForm.client";
+import { ContactForm } from "../ContactForm";
 import { submitContactInquiry } from "@/services/contact";
 
 vi.mock("@/services/contact", () => ({
