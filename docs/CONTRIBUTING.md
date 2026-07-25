@@ -82,6 +82,51 @@ Before submitting a change, ensure you:
 4. Do not break the **State Machine** of the resources.
 5. Follow the **Design System** rules in [`docs/design/visual-dna.md`](./design/visual-dna.md) for frontend code.
 
+## Manual QA Reports
+
+For manual test reports (screenshots + step-by-step verification of an issue),
+use a local `reports/issue-[number]/` folder at the repo root — it's covered
+by `.gitignore` and is not tracked in git. Name reports
+`Report_[FeatureName]_Issue_[Number].md` and use this template:
+
+```markdown
+# Manual Test Report: [Feature Name]
+
+## Issue Information
+- **Issue Number**: #[Number]
+- **Title**: [Issue Title]
+- **Date**: [YYYY-MM-DD]
+- **Tester**: [Your Name/Username]
+
+## Test Environment
+- **URL**: https://www.offer-hub.org
+- **Browser**: [Browser Name and Version]
+- **Device**: [Desktop/Mobile/Tablet]
+
+## Test Steps
+
+### Step 1: [Step Description]
+- **Action**: [What was done]
+- **Expected Result**: [What should happen]
+- **Actual Result**: [What actually happened]
+- **Status**: ✅ Pass / ❌ Fail
+- **Screenshot**: [filename]
+
+## Test Results Summary
+- **Total Steps**: [Number]
+- **Passed**: [Number]
+- **Failed**: [Number]
+- **Overall Status**: ✅ Pass / ❌ Fail
+
+## Issues Found
+- [Description of any issues found during testing]
+
+## Recommendations
+- [Any recommendations for improvements]
+```
+
+Attach the report content and screenshots directly to your PR description rather than committing them — this keeps the QA evidence next to the change it verifies without growing the repo.
+
 ## Pull Request Process
 
 1. Create a branch from `main`.
