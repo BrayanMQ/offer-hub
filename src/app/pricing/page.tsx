@@ -5,7 +5,7 @@ import type { ComponentType } from "react";
 
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import LoadingBar from "@/components/ui/LoadingBar";
+import { LoadingBar } from "@/components/ui/LoadingBar";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import EscrowFlowDiagram from "../shared/EscrowFlowDiagram";
+import { EscrowFlowDiagram } from "../shared/EscrowFlowDiagram";
 import { ESCROW_STEPS } from "./escrow-steps";
 import {
   heroData,
@@ -10,9 +10,9 @@ import {
 } from "./data";
 import { description, sdkCards, tabs } from "./code-tabs";
 
-import UseCaseHero from "../shared/UseCaseHero";
-import StellarImpactCards from "../shared/StellarImpactCards";
-import CodeIntegrationShowcase from "../shared/CodeIntegrationShowcase";
+import { UseCaseHero } from "../shared/UseCaseHero";
+import { StellarImpactCards } from "../shared/StellarImpactCards";
+import { CodeIntegrationShowcase } from "../shared/CodeIntegrationShowcase";
 import {
   FeaturesGrid,
   MetricsSection,
@@ -28,7 +28,7 @@ import {
  * `stickyNav` is injected by the orchestrator and rendered between the hero
  * and the rest, matching the original page layout.
  */
-export default function FreelanceSection({
+export function FreelanceSection({
   stickyNav,
 }: {
   stickyNav?: ReactNode;

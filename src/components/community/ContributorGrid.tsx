@@ -1,4 +1,4 @@
-import SectionHeading from "@/components/community/SectionHeading";
+import { SectionHeading } from "@/components/community/SectionHeading";
 
 interface Contributor {
   name: string;
@@ -20,7 +20,7 @@ function getInitials(name: string) {
     .slice(0, 2);
 }
 
-export default function ContributorGrid({ contributors }: ContributorGridProps) {
+export function ContributorGrid({ contributors }: ContributorGridProps) {
   const data = contributors ?? [];
 
   return (

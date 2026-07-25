@@ -14,7 +14,7 @@ interface SearchResult {
     link: string;
 }
 
-export default function DocsSearchBar() {
+export function DocsSearchBar() {
     const [query, setQuery] = useState("");
     const [debounceQuery, setDebounceQuery] = useState("");
     const [results, setResults] = useState<FuseResult<SearchResult>[]>([]);

@@ -1,32 +1,32 @@
 // ── Freelance ──
-export { default as FreelanceSection } from "./freelance/FreelanceSection";
+export { FreelanceSection } from "./freelance/FreelanceSection";
 export { ESCROW_STEPS as freelanceEscrowSteps } from "./freelance/escrow-steps";
 
 // ── eCommerce ──
-export { default as EcommerceSection } from "./ecommerce/EcommerceSection";
+export { EcommerceSection } from "./ecommerce/EcommerceSection";
 export { ESCROW_STEPS as ecommerceEscrowSteps } from "./ecommerce/escrow-steps";
 
 // ── DAO Payroll ──
-export { default as DaoPayrollSection } from "./dao-payroll/DaoPayrollSection";
+export { DaoPayrollSection } from "./dao-payroll/DaoPayrollSection";
 export { ESCROW_STEPS as daoPayrollEscrowSteps } from "./dao-payroll/escrow-steps";
 
 // ── Real Estate ──
-export { default as RealEstateSection } from "./real-estate/RealEstateSection";
+export { RealEstateSection } from "./real-estate/RealEstateSection";
 export { ESCROW_STEPS as realEstateEscrowSteps } from "./real-estate/escrow-steps";
 
 // ── Service Platforms ──
-export { default as ServicePlatformsSection } from "./service-platforms/ServicePlatformsSection";
+export { ServicePlatformsSection } from "./service-platforms/ServicePlatformsSection";
 export { ESCROW_STEPS as servicePlatformsEscrowSteps } from "./service-platforms/escrow-steps";
 
 // ── Shared ──
 export {
-  default as EscrowFlowDiagram,
+  EscrowFlowDiagram,
   type EscrowStep,
   type EscrowFlowDiagramProps,
 } from "./shared/EscrowFlowDiagram";
 
 export {
-  default as UseCaseHero,
+  UseCaseHero,
   type UseCaseHeroProps,
   type UseCaseHeroStat,
   type HeroNode,
@@ -34,7 +34,7 @@ export {
 } from "./shared/UseCaseHero";
 
 export {
-  default as StellarImpactCards,
+  StellarImpactCards,
   type CardVariant,
   type DetailedMetricCard,
   type SimpleMetricCard,
@@ -42,7 +42,7 @@ export {
   type StellarImpactCardsProps,
 } from "./shared/StellarImpactCards";
 export {
-  default as CodeIntegrationShowcase,
+  CodeIntegrationShowcase,
   type CodeTab,
   type SdkCard,
   type CodeIntegrationShowcaseProps,

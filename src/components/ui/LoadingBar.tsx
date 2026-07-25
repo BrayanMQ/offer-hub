@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 
-export default function LoadingBar() {
+export function LoadingBar() {
     const [progress, setProgress] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const scrollY = useScrollProgress(!isLoading);

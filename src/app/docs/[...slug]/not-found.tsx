@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, FileText, Home, SearchX } from "lucide-react";
-import DocsSearchBar from "@/components/docs/DocsSearchBar";
+import { DocsSearchBar } from "@/components/docs/DocsSearchBar";
 
 const recommendedDocs = [
   {

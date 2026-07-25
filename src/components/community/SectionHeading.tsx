@@ -4,7 +4,7 @@ type SectionHeadingProps = {
   subtitle: string;
 };
 
-const SectionHeading = ({
+export const SectionHeading = ({
   eyebrow,
   title,
   subtitle,
@@ -24,4 +24,4 @@ const SectionHeading = ({
   );
 };
 
-export default SectionHeading;
+

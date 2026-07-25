@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import LoadingBar from "@/components/ui/LoadingBar";
+import { LoadingBar } from "@/components/ui/LoadingBar";
 
-import SectionNav from "@/components/shared/SectionNav";
+import { SectionNav } from "@/components/shared/SectionNav";
 import {
   BLUEPRINT_SECTIONS,
   BLUEPRINT_SCROLL_MARGIN_PX,
 } from "@/lib/blueprint-nav";
-import BlueprintHero from "@/components/blueprint/BlueprintHero";
-import OrchestratorShowcase from "@/components/blueprint/OrchestratorShowcase";
-import MarketplaceTemplate from "@/components/blueprint/MarketplaceTemplate";
-import EvolutionTimeline from "@/components/blueprint/EvolutionTimeline";
+import { BlueprintHero } from "@/components/blueprint/BlueprintHero";
+import { OrchestratorShowcase } from "@/components/blueprint/OrchestratorShowcase";
+import { MarketplaceTemplate } from "@/components/blueprint/MarketplaceTemplate";
+import { EvolutionTimeline } from "@/components/blueprint/EvolutionTimeline";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({

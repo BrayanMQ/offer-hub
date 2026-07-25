@@ -195,7 +195,7 @@ function CodePanel({ tab }: { tab: CodeTab }) {
   );
 }
 
-export default function CodeIntegrationShowcase({
+export function CodeIntegrationShowcase({
   description,
   tabs,
   sdkCards,

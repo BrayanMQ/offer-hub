@@ -1,7 +1,7 @@
-import ArchitectureSection from "@/components/shared/ArchitectureSection";
+import { ArchitectureSection } from "@/components/shared/ArchitectureSection";
 import { CheckCircle2 } from "lucide-react";
 
-export default function TractionSection() {
+export function TractionSection() {
   return (
     <ArchitectureSection
       id="traction"

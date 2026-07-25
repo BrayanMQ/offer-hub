@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import LoadingBar from "@/components/ui/LoadingBar";
+import { LoadingBar } from "@/components/ui/LoadingBar";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { MDX_PRIVACY_COMPONENTS } from "@/components/mdx/PrivacyComponents";
 import { buildPageMetadata } from "@/lib/seo";

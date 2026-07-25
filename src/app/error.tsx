@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
-import ErrorCard from "@/components/shared/ErrorCard";
+import { ErrorCard } from "@/components/shared/ErrorCard";
 
 export default function Error({
   error,

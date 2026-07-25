@@ -1,7 +1,7 @@
-import ArchitectureSection from "@/components/shared/ArchitectureSection";
+import { ArchitectureSection } from "@/components/shared/ArchitectureSection";
 import { DollarSign, Zap, Shield, Lock, Globe, Users } from "lucide-react";
 
-export default function WhyStellarSection() {
+export function WhyStellarSection() {
   return (
     <ArchitectureSection
       id="why-stellar"

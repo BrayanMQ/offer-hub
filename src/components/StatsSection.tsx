@@ -5,7 +5,7 @@ const stats = [
   { value: "50+", label: "Countries" },
 ];
 
-export default function StatsSection() {
+export function StatsSection() {
   return (
     <section className="relative py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

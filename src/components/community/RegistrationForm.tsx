@@ -31,7 +31,7 @@ interface FormData {
     referral: string;
 }
 
-export default function RegistrationForm() {
+export function RegistrationForm() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);

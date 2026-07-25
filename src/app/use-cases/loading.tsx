@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import LoadingBar from "@/components/ui/LoadingBar";
+import { LoadingBar } from "@/components/ui/LoadingBar";
 import { Skeleton } from "@/components/ui/Skeleton";
 
 export default function UseCasesLoading() {

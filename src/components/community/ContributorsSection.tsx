@@ -2,7 +2,7 @@
 
 import { useState, memo } from "react";
 import { Users, GitCommit, ChevronDown } from "lucide-react";
-import SectionHeading from "@/components/community/SectionHeading";
+import { SectionHeading } from "@/components/community/SectionHeading";
 import Image from "next/image";
 
 interface ContributorData {
@@ -67,7 +67,7 @@ const ContributorCard = memo(function ContributorCard({ person }: { person: Cont
   );
 });
 
-const ContributorsSection = ({ contributors }: ContributorsSectionProps) => {
+export const ContributorsSection = ({ contributors }: ContributorsSectionProps) => {
   const [displayCount, setDisplayCount] = useState(30);
   const totalContributors = contributors.length;
 
@@ -127,4 +127,4 @@ const ContributorsSection = ({ contributors }: ContributorsSectionProps) => {
   );
 };
 
-export default ContributorsSection;
+

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import DocsSearchBar from "@/components/docs/DocsSearchBar";
+import { DocsSearchBar } from "@/components/docs/DocsSearchBar";
 import { Book, Code, Shield, LifeBuoy, Terminal, Zap, ChevronRight, Lock } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/cn";

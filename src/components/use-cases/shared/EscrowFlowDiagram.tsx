@@ -247,7 +247,7 @@ function BlockchainPulse({ active }: { active: boolean }) {
   );
 }
 
-export default function EscrowFlowDiagram({
+export function EscrowFlowDiagram({
   steps,
   className,
 }: EscrowFlowDiagramProps) {

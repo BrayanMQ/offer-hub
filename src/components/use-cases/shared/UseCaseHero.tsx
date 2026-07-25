@@ -144,7 +144,7 @@ function NetworkPattern({
  * CTA link, footer pill, and the background network graph — is passed in as
  * typed props from each use case's `data.tsx`.
  */
-export default function UseCaseHero({
+export function UseCaseHero({
   gradientId,
   badgeLabel,
   headline,

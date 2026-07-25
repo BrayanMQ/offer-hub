@@ -2,7 +2,7 @@
 
 import { useState, memo, useMemo } from "react";
 import { Tag, ArrowUpRight, ChevronDown } from "lucide-react";
-import SectionHeading from "@/components/community/SectionHeading";
+import { SectionHeading } from "@/components/community/SectionHeading";
 import { cn } from "@/lib/cn";
 
 interface IssueData {
@@ -87,7 +87,7 @@ const IssueCard = memo(function IssueCard({ issue }: { issue: IssueData }) {
   );
 });
 
-const OpenIssuesSection = ({ issues }: OpenIssuesSectionProps) => {
+export const OpenIssuesSection = ({ issues }: OpenIssuesSectionProps) => {
   const [displayCount, setDisplayCount] = useState(15);
 
   // Sort by number descending for newest first - memoized
@@ -134,4 +134,4 @@ const OpenIssuesSection = ({ issues }: OpenIssuesSectionProps) => {
   );
 };
 
-export default OpenIssuesSection;
+

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function CTASection() {
+export function CTASection() {
   return (
     <section className="py-28 bg-transparent">
       <div className="max-w-3xl mx-auto px-6 text-center flex flex-col items-center gap-10">

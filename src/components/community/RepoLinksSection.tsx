@@ -18,7 +18,7 @@ const repos = [
     },
 ];
 
-export default function RepoLinksSection() {
+export function RepoLinksSection() {
     return (
         <section id="repo-links" className="py-12 bg-transparent">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">

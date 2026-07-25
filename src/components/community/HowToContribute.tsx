@@ -18,7 +18,7 @@ const contributionTypes = [
     { title: "Bug reports", description: "Find issues? Let us know so we can fix them together.", icon: Bug },
 ];
 
-export default function HowToContribute() {
+export function HowToContribute() {
     return (
         <section id="how-to-contribute" className="py-24">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">

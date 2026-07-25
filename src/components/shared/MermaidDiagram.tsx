@@ -270,4 +270,4 @@ export function MermaidDiagram({
   );
 }
 
-export default MermaidDiagram;
+

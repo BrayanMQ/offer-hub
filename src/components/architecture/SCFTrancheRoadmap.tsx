@@ -1,8 +1,8 @@
-import ArchitectureSection from "@/components/shared/ArchitectureSection";
-import ZoomableDiagram from "@/components/shared/ZoomableDiagram";
+import { ArchitectureSection } from "@/components/shared/ArchitectureSection";
+import { ZoomableDiagram } from "@/components/shared/ZoomableDiagram";
 import { SCF_GANTT_CHART } from "./scf-tranche-roadmap.charts";
 
-export default function SCFTrancheRoadmap() {
+export function SCFTrancheRoadmap() {
   return (
     <ArchitectureSection
       id="roadmap"

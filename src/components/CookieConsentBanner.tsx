@@ -6,7 +6,7 @@ import Link from "next/link";
 const CONSENT_KEY = "cookie_consent";
 const COOKIE_PREFERENCES_EVENT = "cookie-preferences-open";
 
-export default function CookieConsentBanner() {
+export function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

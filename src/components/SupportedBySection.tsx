@@ -25,7 +25,7 @@ const partners = [
   },
 ];
 
-export default function SupportedBySection() {
+export function SupportedBySection() {
   return (
     <section className="relative py-8 bg-transparent">
       <div className="container mx-auto px-6">

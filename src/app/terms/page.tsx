@@ -3,7 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import LoadingBar from "@/components/ui/LoadingBar";
+import { LoadingBar } from "@/components/ui/LoadingBar";
 import { TERMS_MDX_COMPONENTS } from "@/components/terms/terms-mdx-components";
 import { TermsPageHeader } from "@/components/terms/TermsPageHeader";
 import { buildPageMetadata } from "@/lib/seo";

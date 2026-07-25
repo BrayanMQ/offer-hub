@@ -39,7 +39,7 @@ function FlowLegend() {
   );
 }
 
-export default function OrchestratorShowcase() {
+export function OrchestratorShowcase() {
   const [expandedKey, setExpandedKey] = useState<LayerKey | null>("logic");
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
 

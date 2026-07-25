@@ -24,7 +24,7 @@ const LIQUID_HIGHLIGHTS = {
  * so the browser re-evaluates them on every paint — this is what makes the
  * effect respond to dark mode toggle without re-running the effect.
  */
-export default function HeroSection() {
+export function HeroSection() {
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {

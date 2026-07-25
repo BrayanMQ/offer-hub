@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { GitPullRequest, Timer, User, ArrowUpRight } from "lucide-react";
-import SectionHeading from "@/components/community/SectionHeading";
+import { SectionHeading } from "@/components/community/SectionHeading";
 
 export interface PullRequestData {
   number: number;
@@ -71,7 +71,7 @@ const PRCard = memo(function PRCard({ pr }: { pr: PullRequestData }) {
   );
 });
 
-const RecentPRsSection = ({ pullRequests }: RecentPRsSectionProps) => {
+export const RecentPRsSection = ({ pullRequests }: RecentPRsSectionProps) => {
   // Double the list for seamless loop
   const doublePRs = [...pullRequests, ...pullRequests];
 
@@ -137,4 +137,4 @@ const RecentPRsSection = ({ pullRequests }: RecentPRsSectionProps) => {
   );
 };
 
-export default RecentPRsSection;
+

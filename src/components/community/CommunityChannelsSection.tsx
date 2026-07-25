@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Disc3, Github, Send, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
-import SectionHeading from "@/components/community/SectionHeading";
+import { SectionHeading } from "@/components/community/SectionHeading";
 
 const channels = [
   {
@@ -31,7 +31,7 @@ const channels = [
   },
 ];
 
-const CommunityChannelsSection = () => {
+export const CommunityChannelsSection = () => {
   return (
     <section id="community-channels" className="py-24 bg-transparent">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -79,4 +79,3 @@ const CommunityChannelsSection = () => {
   );
 };
 
-export default CommunityChannelsSection;

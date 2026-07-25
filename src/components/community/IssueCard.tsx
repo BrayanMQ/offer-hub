@@ -34,7 +34,7 @@ const difficultyConfig: Record<
   },
 };
 
-export default function IssueCard({
+export function IssueCard({
   number,
   title,
   difficulty,

@@ -522,7 +522,7 @@ function SimpleMetricCardComponent({
 
 /* ── Main Component ── */
 
-export default function StellarImpactCards({
+export function StellarImpactCards({
   variant,
   cards,
   toggleId,

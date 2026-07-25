@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import EscrowFlowDiagram from "../shared/EscrowFlowDiagram";
+import { EscrowFlowDiagram } from "../shared/EscrowFlowDiagram";
 import { ESCROW_STEPS } from "./escrow-steps";
 import {
   heroData,
@@ -10,9 +10,9 @@ import {
 } from "./data";
 import { description, sdkCards, tabs } from "./code-tabs";
 
-import UseCaseHero from "../shared/UseCaseHero";
-import StellarImpactCards from "../shared/StellarImpactCards";
-import CodeIntegrationShowcase from "../shared/CodeIntegrationShowcase";
+import { UseCaseHero } from "../shared/UseCaseHero";
+import { StellarImpactCards } from "../shared/StellarImpactCards";
+import { CodeIntegrationShowcase } from "../shared/CodeIntegrationShowcase";
 import {
   FeaturesGrid,
   MetricsSection,
@@ -25,7 +25,7 @@ import {
  * page-section wrappers (#features / #metrics / #architecture / #sdk); only one
  * use-case section is mounted at a time, so the ids never collide.
  */
-export default function ServicePlatformsSection({
+export function ServicePlatformsSection({
   stickyNav,
 }: {
   stickyNav?: ReactNode;

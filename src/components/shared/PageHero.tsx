@@ -19,7 +19,7 @@ type PageHeroProps = {
   children: ReactNode;
 };
 
-export default function PageHero({
+export function PageHero({
   id,
   scrollMarginPx,
   eyebrowIcon,

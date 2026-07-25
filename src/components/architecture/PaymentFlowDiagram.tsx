@@ -1,8 +1,8 @@
-import ArchitectureSection from "@/components/shared/ArchitectureSection";
-import ZoomableDiagram from "@/components/shared/ZoomableDiagram";
+import { ArchitectureSection } from "@/components/shared/ArchitectureSection";
+import { ZoomableDiagram } from "@/components/shared/ZoomableDiagram";
 import { PAYMENT_SEQUENCE_CHART, PAYMENT_STATE_CHART } from "./payment-flow.charts";
 
-export default function PaymentFlowDiagram() {
+export function PaymentFlowDiagram() {
   return (
     <ArchitectureSection
       id="flow"

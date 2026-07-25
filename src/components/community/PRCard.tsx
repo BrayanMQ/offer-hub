@@ -37,7 +37,7 @@ function formatMergedAt(mergedAt: string | Date): { label: string; iso?: string 
   return { label: mergedAt };
 }
 
-export default function PRCard({
+export function PRCard({
   title,
   author,
   authorAvatar,

@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   ],
 };
 import { Footer } from "@/components/layout/Footer";
-import HeroSection from "@/components/HeroSection";
-import StatsSection from "@/components/StatsSection";
-import SupportedBySection from "@/components/SupportedBySection";
-import FeaturesSection from "@/components/FeaturesSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import RegistrationForm from "@/components/community/RegistrationForm";
-import LoadingBar from "@/components/ui/LoadingBar";
+import { HeroSection } from "@/components/HeroSection";
+import { StatsSection } from "@/components/StatsSection";
+import { SupportedBySection } from "@/components/SupportedBySection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { RegistrationForm } from "@/components/community/RegistrationForm";
+import { LoadingBar } from "@/components/ui/LoadingBar";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { Cpu } from "lucide-react";
-import PageHero from "@/components/shared/PageHero";
+import { PageHero } from "@/components/shared/PageHero";
 import { ARCHITECTURE_SCROLL_MARGIN_PX } from "@/lib/architecture-nav";
 
 const layers = [
@@ -10,7 +10,7 @@ const layers = [
   { label: "Stellar", sublabel: "Soroban + USDC", color: "var(--color-primary)" },
 ];
 
-export default function ArchitectureHero() {
+export function ArchitectureHero() {
   return (
     <PageHero
       id="overview"

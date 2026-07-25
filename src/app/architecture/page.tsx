@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import LoadingBar from "@/components/ui/LoadingBar";
+import { LoadingBar } from "@/components/ui/LoadingBar";
 
-import SectionNav from "@/components/shared/SectionNav";
+import { SectionNav } from "@/components/shared/SectionNav";
 import {
   ARCHITECTURE_SECTIONS,
   ARCHITECTURE_SCROLL_MARGIN_PX,
 } from "@/lib/architecture-nav";
-import ArchitectureHero from "@/components/architecture/ArchitectureHero";
-import SystemArchitectureDiagram from "@/components/architecture/SystemArchitectureDiagram";
-import PaymentFlowDiagram from "@/components/architecture/PaymentFlowDiagram";
-import IntegrationsMap from "@/components/architecture/IntegrationsMap";
-import SCFTrancheRoadmap from "@/components/architecture/SCFTrancheRoadmap";
-import WhyStellarSection from "@/components/architecture/WhyStellarSection";
-import TractionSection from "@/components/architecture/TractionSection";
+import { ArchitectureHero } from "@/components/architecture/ArchitectureHero";
+import { SystemArchitectureDiagram } from "@/components/architecture/SystemArchitectureDiagram";
+import { PaymentFlowDiagram } from "@/components/architecture/PaymentFlowDiagram";
+import { IntegrationsMap } from "@/components/architecture/IntegrationsMap";
+import { SCFTrancheRoadmap } from "@/components/architecture/SCFTrancheRoadmap";
+import { WhyStellarSection } from "@/components/architecture/WhyStellarSection";
+import { TractionSection } from "@/components/architecture/TractionSection";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({

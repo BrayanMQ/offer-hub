@@ -1,10 +1,10 @@
 "use client";
 
 import { Layers } from "lucide-react";
-import PageHero from "@/components/shared/PageHero";
+import { PageHero } from "@/components/shared/PageHero";
 import { BLUEPRINT_SCROLL_MARGIN_PX } from "@/lib/blueprint-nav";
 
-export default function BlueprintHero() {
+export function BlueprintHero() {
   return (
     <PageHero
       id="vision"

@@ -3,14 +3,14 @@
 import { useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { DOMAINS, NEU_ELEVATED, NEU_SUNKEN, statusConfig } from "./config";
-import { PHASES } from "./data";
+import { PHASES } from "./evolution-timeline.data";
 import { ConnectorDot } from "./ConnectorDot";
 import { PhaseCard } from "./PhaseCard";
 import { TimelineLine } from "./TimelineLine";
 import type { PhaseDomain, PhaseStatus } from "./types";
 
 
-export default function EvolutionTimelineView() {
+export function EvolutionTimelineView() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeDomain, setActiveDomain] = useState<"all" | PhaseDomain>("all");
   const shouldReduceMotion = useReducedMotion();

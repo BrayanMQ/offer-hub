@@ -8,7 +8,7 @@ export interface ContributorCardProps {
   profileUrl: string;
 }
 
-export default function ContributorCard({
+export function ContributorCard({
   avatar,
   username,
   contributions,

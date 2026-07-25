@@ -11,7 +11,7 @@ interface HeroRepoStatsSectionProps {
   stats: RepoStats | null;
 }
 
-const HeroRepoStatsSection = ({ stats }: HeroRepoStatsSectionProps) => {
+export const HeroRepoStatsSection = ({ stats }: HeroRepoStatsSectionProps) => {
   const statsUnavailable = stats === null;
 
   const repoStats = [
@@ -95,4 +95,4 @@ const HeroRepoStatsSection = ({ stats }: HeroRepoStatsSectionProps) => {
   );
 };
 
-export default HeroRepoStatsSection;
+

@@ -153,7 +153,7 @@ function BusinessView() {
   );
 }
 
-export default function MarketplaceTemplate() {
+export function MarketplaceTemplate() {
   const [view, setView] = useState<View>("freelancer");
 
   return (

@@ -20,7 +20,7 @@ type ArchitectureSectionProps = {
   children: ReactNode;
 };
 
-export default function ArchitectureSection({
+export function ArchitectureSection({
   id,
   sectionClassName,
   eyebrowClassName,

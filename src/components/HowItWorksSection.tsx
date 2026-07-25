@@ -21,7 +21,7 @@ const steps = [
   },
 ];
 
-export default function HowItWorksSection() {
+export function HowItWorksSection() {
   return (
     <section id="how-it-works" className="py-24 bg-bg-base transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

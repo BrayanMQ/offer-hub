@@ -11,7 +11,7 @@ type Props = {
   children: ReactNode;
 };
 
-export default function DiagramZoomModal({ title, isOpen, onClose, children }: Props) {
+export function DiagramZoomModal({ title, isOpen, onClose, children }: Props) {
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };

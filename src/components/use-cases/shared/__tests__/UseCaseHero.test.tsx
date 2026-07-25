@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { ShoppingCart } from "lucide-react";
-import UseCaseHero, { type UseCaseHeroProps } from "../UseCaseHero";
+import { UseCaseHero, type UseCaseHeroProps } from "../UseCaseHero";
 
 // framer-motion's `whileInView` (used by the "At a glance" stat cards) relies on
 // IntersectionObserver, which jsdom does not implement.

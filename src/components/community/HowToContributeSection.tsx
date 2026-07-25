@@ -1,5 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
-import SectionHeading from "@/components/community/SectionHeading";
+import { SectionHeading } from "@/components/community/SectionHeading";
 
 const contributionSteps = [
   "Read the contribution guide and code of conduct.",
@@ -8,7 +8,7 @@ const contributionSteps = [
   "Open your PR with tests, screenshots, and clear scope.",
 ];
 
-const HowToContributeSection = () => {
+export const HowToContributeSection = () => {
   return (
     <section id="how-to-contribute" className="py-24 bg-transparent">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -38,4 +38,4 @@ const HowToContributeSection = () => {
   );
 };
 
-export default HowToContributeSection;
+

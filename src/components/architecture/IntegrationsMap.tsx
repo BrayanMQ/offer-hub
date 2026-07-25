@@ -1,6 +1,6 @@
-import ArchitectureSection from "@/components/shared/ArchitectureSection";
+import { ArchitectureSection } from "@/components/shared/ArchitectureSection";
 
-export default function IntegrationsMap() {
+export function IntegrationsMap() {
   return (
     <ArchitectureSection
       id="integrations"

@@ -22,25 +22,29 @@ import { SectionLoading } from "./shared/SectionLayout";
 type SectionProps = { stickyNav?: ReactNode };
 
 const SECTIONS: Record<UseCaseId, ComponentType<SectionProps>> = {
-  freelance: dynamic(() => import("./freelance/FreelanceSection"), {
-    loading: () => <SectionLoading />,
-  }),
-  ecommerce: dynamic(() => import("./ecommerce/EcommerceSection"), {
-    loading: () => <SectionLoading />,
-  }),
-  "dao-payroll": dynamic(() => import("./dao-payroll/DaoPayrollSection"), {
-    loading: () => <SectionLoading />,
-  }),
-  "real-estate": dynamic(() => import("./real-estate/RealEstateSection"), {
-    loading: () => <SectionLoading />,
-  }),
+  freelance: dynamic(
+    () => import("./freelance/FreelanceSection").then((mod) => mod.FreelanceSection),
+    { loading: () => <SectionLoading /> },
+  ),
+  ecommerce: dynamic(
+    () => import("./ecommerce/EcommerceSection").then((mod) => mod.EcommerceSection),
+    { loading: () => <SectionLoading /> },
+  ),
+  "dao-payroll": dynamic(
+    () => import("./dao-payroll/DaoPayrollSection").then((mod) => mod.DaoPayrollSection),
+    { loading: () => <SectionLoading /> },
+  ),
+  "real-estate": dynamic(
+    () => import("./real-estate/RealEstateSection").then((mod) => mod.RealEstateSection),
+    { loading: () => <SectionLoading /> },
+  ),
   "service-platforms": dynamic(
-    () => import("./service-platforms/ServicePlatformsSection"),
+    () => import("./service-platforms/ServicePlatformsSection").then((mod) => mod.ServicePlatformsSection),
     { loading: () => <SectionLoading /> },
   ),
 };
 
-export default function UseCasesClient() {
+export function UseCasesClient() {
   const [activeUseCase, setActiveUseCase] = useState<UseCaseId>("freelance");
   const [activeSection, setActiveSection] = useState<string>(
     PAGE_SECTIONS[0].id,

@@ -7,7 +7,7 @@ interface RepoStatsProps {
      openIssues?: number;
 }
 
-export default function RepoStats({
+export function RepoStats({
      stars,
      forks,
      watchers,

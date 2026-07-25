@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { SearchX } from "lucide-react";
-import ErrorCard from "@/components/shared/ErrorCard";
+import { ErrorCard } from "@/components/shared/ErrorCard";
 
 export default function NotFound() {
   return (

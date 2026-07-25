@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { MotionConfig } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ErrorCard from "@/components/shared/ErrorCard";
+import { ErrorCard } from "@/components/shared/ErrorCard";
 
 export default function GlobalError({
   error,

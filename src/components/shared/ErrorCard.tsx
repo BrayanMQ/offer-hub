@@ -11,7 +11,7 @@ type ErrorCardProps = {
   action: ReactNode;
 };
 
-export default function ErrorCard({
+export function ErrorCard({
   icon,
   secondaryIcon,
   heading,

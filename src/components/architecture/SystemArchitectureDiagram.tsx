@@ -1,8 +1,8 @@
-import ArchitectureSection from "@/components/shared/ArchitectureSection";
-import ZoomableDiagram from "@/components/shared/ZoomableDiagram";
+import { ArchitectureSection } from "@/components/shared/ArchitectureSection";
+import { ZoomableDiagram } from "@/components/shared/ZoomableDiagram";
 import { SYSTEM_ARCHITECTURE_CHART } from "./system-architecture.charts";
 
-export default function SystemArchitectureDiagram() {
+export function SystemArchitectureDiagram() {
   return (
     <ArchitectureSection
       id="system"

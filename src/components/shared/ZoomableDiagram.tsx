@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Maximize2 } from "lucide-react";
-import MermaidDiagram from "@/components/shared/MermaidDiagram";
-import DiagramZoomModal from "./DiagramZoomModal";
+import { MermaidDiagram } from "@/components/shared/MermaidDiagram";
+import { DiagramZoomModal } from "./DiagramZoomModal";
 
 type ZoomableDiagramProps = {
   chart: string;
@@ -12,7 +12,7 @@ type ZoomableDiagramProps = {
   className?: string;
 };
 
-export default function ZoomableDiagram({
+export function ZoomableDiagram({
   chart,
   title,
   className,
