@@ -42,20 +42,20 @@ function HoverDetailPanel({ step }: { step: EscrowStep }) {
           {step.description}
         </p>
 
-        <div className="bg-bg-sunken shadow-neu-sunken-subtle rounded-xl p-3">
+        <div className="bg-bg-sunken shadow-neu-sunken-subtle rounded-xl p-3 overflow-x-auto">
           <p className="text-[10px] font-bold uppercase tracking-wider text-content-muted mb-1">
             API Endpoint
           </p>
-          <code className="text-xs font-mono text-theme-primary break-all">
+          <code className="text-xs font-mono text-theme-primary break-words">
             {step.apiMethod}
           </code>
         </div>
 
-        <div className="bg-bg-sunken shadow-neu-sunken-subtle rounded-xl p-3">
+        <div className="bg-bg-sunken shadow-neu-sunken-subtle rounded-xl p-3 overflow-x-auto">
           <p className="text-[10px] font-bold uppercase tracking-wider text-content-muted mb-1">
             SDK
           </p>
-          <code className="text-xs font-mono text-content-primary break-all">
+          <code className="text-xs font-mono text-content-primary break-words">
             {step.apiSnippet}
           </code>
         </div>
@@ -100,7 +100,8 @@ function StepCard({
       aria-label={`Step ${step.stepNumber}: ${step.label}`}
       className={cn(
         "flex flex-col p-5 md:p-6 rounded-[1.5rem] bg-bg-elevated transition-all duration-300 ease-out cursor-pointer select-none",
-        "w-full md:flex-1 min-w-0",
+        "w-full min-w-0",
+        isActive ? "md:flex-[2.2]" : "md:flex-1",
         "animate-fadeInUp",
         isActive
           ? "shadow-neu-raised-hover"
@@ -122,23 +123,23 @@ function StepCard({
           <span className="text-[10px] font-bold uppercase tracking-wider text-content-muted">
             Step {step.stepNumber}
           </span>
-          <h4 className="text-sm md:text-base font-bold text-content-primary truncate">
+          <h4 className="text-sm md:text-base font-bold text-content-primary">
             {step.label}
           </h4>
         </div>
       </div>
 
-      <div className="flex items-center gap-2 mb-1">
+      <div className="flex flex-nowrap items-center gap-2 mb-1">
         <span
           className={cn(
-            "inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium shadow-neu-raised-sm",
+            "inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-[10px] font-medium shadow-neu-raised-sm",
             STATUS_STYLES[step.status],
           )}
         >
           {step.status.replace(/_/g, " ")}
         </span>
         {step.isOnChain && (
-          <span className="text-[10px] font-bold text-theme-primary opacity-70">
+          <span className="whitespace-nowrap text-[10px] font-bold text-theme-primary opacity-70">
             On-chain
           </span>
         )}
@@ -261,7 +262,7 @@ export function EscrowFlowDiagram({
   return (
     <div
       className={cn(
-        "relative min-h-[400px] md:min-h-[550px] rounded-[3rem] shadow-neu-sunken w-full max-w-5xl mx-auto bg-bg-base p-6 md:p-12 animate-fadeInScale overflow-hidden",
+        "relative min-h-[400px] rounded-[3rem] shadow-neu-sunken w-full max-w-7xl mx-auto bg-bg-base p-6 md:p-12 animate-fadeInScale overflow-hidden",
         className,
       )}
     >
