@@ -199,7 +199,7 @@ export default async function ChangelogPage() {
                   <div
                     className={`hidden md:block w-5/12 ${index % 2 === 0 ? "text-left" : "text-right"}`}
                   >
-                    <span className="text-sm font-black text-content-primary uppercase tracking-widest opacity-40">
+                    <span className="text-sm font-black text-content-primary uppercase tracking-widest opacity-70">
                       {entry.date}
                     </span>
                   </div>

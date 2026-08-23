@@ -150,7 +150,7 @@ export function DocsLayoutShell({ nav, children }: DocsLayoutShellProps) {
               </button>
 
               {isHub ? (
-                <span className="text-content-primary font-bold tracking-tight opacity-40 italic text-[14px]">Documentation Index</span>
+                <span className="text-content-primary font-bold tracking-tight opacity-70 italic text-[14px]">Documentation Index</span>
               ) : (
                 <Breadcrumb />
               )}
