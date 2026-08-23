@@ -231,7 +231,7 @@ export function CodeIntegrationShowcase({
           }}
         >
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-t-[2.5rem] bg-bg-sunken px-6 py-4 shadow-neu-sunken-subtle">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1" role="tablist" aria-label="SDK language">
               {tabs.map((tab) => {
                 const TabIcon = tab.icon;
                 const isActive = tab.id === activeTabId;
@@ -239,6 +239,7 @@ export function CodeIntegrationShowcase({
                   <button
                     key={tab.id}
                     type="button"
+                    id={`${tab.id}-tab`}
                     onClick={() => setActiveTabId(tab.id)}
                     className={cn(
                       "flex items-center gap-1.5 rounded-xl px-4 py-2",
@@ -258,6 +259,7 @@ export function CodeIntegrationShowcase({
                     }
                     role="tab"
                     aria-selected={isActive}
+                    aria-controls={`${tab.id}-panel`}
                   >
                     <TabIcon size={12} />
                     <span>{tab.label}</span>
@@ -288,9 +290,14 @@ export function CodeIntegrationShowcase({
             {tabs.map((tab) => (
               <div
                 key={tab.id}
+                id={`${tab.id}-panel`}
+                role="tabpanel"
+                aria-labelledby={`${tab.id}-tab`}
+                tabIndex={0}
+                hidden={tab.id !== activeTabId}
                 className={cn(
                   "transition-opacity duration-300",
-                  tab.id === activeTabId ? "block opacity-100" : "hidden opacity-0"
+                  tab.id === activeTabId ? "block opacity-100" : "opacity-0"
                 )}
               >
                 <CodePanel tab={tab} />
