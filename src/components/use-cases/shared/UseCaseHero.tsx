@@ -259,7 +259,7 @@ export function UseCaseHero({
                       </div>
 
                       <div className="rounded-xl bg-bg-elevated px-3 py-2 text-right shadow-neu-sunken-subtle">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-theme-primary">
+                        <p className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.24em] text-theme-primary">
                           {item.accent}
                         </p>
                       </div>
