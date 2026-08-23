@@ -249,11 +249,11 @@ export default function AccessibilityPage() {
                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div className="p-4 rounded-lg bg-theme-primary/5 border border-theme-primary/20">
                                              <p className="text-xs font-bold text-theme-primary uppercase tracking-wider mb-1">Last Full Audit</p>
-                                             <p className="text-lg font-black text-content-primary">April 2026</p>
+                                             <p className="text-lg font-black text-content-primary">August 2026</p>
                                         </div>
                                         <div className="p-4 rounded-lg bg-theme-primary/5 border border-theme-primary/20">
                                              <p className="text-xs font-bold text-theme-primary uppercase tracking-wider mb-1">Next Review</p>
-                                             <p className="text-lg font-black text-content-primary">October 2026</p>
+                                             <p className="text-lg font-black text-content-primary">November 2026</p>
                                         </div>
                                    </div>
                               </div>
@@ -276,6 +276,10 @@ export default function AccessibilityPage() {
                                         <div>
                                              <p className="font-bold text-content-primary mb-2">Video Content</p>
                                              <p className="text-sm text-content-secondary mb-2">Archived videos may lack captions. All new videos include captions; existing ones updated progressively through Q3 2026.</p>
+                                        </div>
+                                        <div>
+                                             <p className="font-bold text-content-primary mb-2">Color Contrast Sweep</p>
+                                             <p className="text-sm text-content-secondary mb-2">The primary call-to-action button and known structural ARIA gaps have been remediated. A remaining sweep of decorative accent-teal text against light backgrounds site-wide is in progress. Remediation: Q4 2026.</p>
                                         </div>
                                    </div>
                               </div>
