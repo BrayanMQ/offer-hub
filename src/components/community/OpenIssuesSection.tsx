@@ -71,9 +71,10 @@ const IssueCard = memo(function IssueCard({ issue }: { issue: IssueData }) {
           href={issue.url}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Open issue #${issue.number}: ${issue.title}`}
           className="w-10 h-10 rounded-xl text-white transition-all btn-neumorphic-primary flex items-center justify-center shadow-neu-raised-sm hover:scale-105"
         >
-          <ArrowUpRight size={18} />
+          <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </div>
     </article>
