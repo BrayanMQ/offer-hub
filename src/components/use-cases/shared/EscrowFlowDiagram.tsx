@@ -262,7 +262,7 @@ export function EscrowFlowDiagram({
   return (
     <div
       className={cn(
-        "relative min-h-[400px] rounded-[3rem] shadow-neu-sunken w-full max-w-7xl mx-auto bg-bg-base p-6 md:p-12 animate-fadeInScale overflow-hidden",
+        "relative rounded-[3rem] shadow-neu-sunken w-full max-w-7xl mx-auto bg-bg-base p-6 md:p-12 animate-fadeInScale overflow-hidden",
         className,
       )}
     >
