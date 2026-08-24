@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 import { Terminal } from "lucide-react";
 import {
@@ -6,20 +6,6 @@ import {
   type CodeTab,
 } from "../CodeIntegrationShowcase";
 import { axe } from "@/test/axe";
-
-beforeAll(() => {
-  vi.stubGlobal(
-    "IntersectionObserver",
-    class {
-      observe() {}
-      unobserve() {}
-      disconnect() {}
-      takeRecords() {
-        return [];
-      }
-    },
-  );
-});
 
 const tabs: CodeTab[] = [
   {

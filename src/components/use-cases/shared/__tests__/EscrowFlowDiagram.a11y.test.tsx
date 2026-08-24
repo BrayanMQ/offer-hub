@@ -1,20 +1,8 @@
-import { describe, it, expect, beforeAll, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 import { ShieldCheck } from "lucide-react";
 import { EscrowFlowDiagram, type EscrowStep } from "../EscrowFlowDiagram";
 import { axe } from "@/test/axe";
-
-beforeAll(() => {
-  vi.stubGlobal(
-    "matchMedia",
-    (query: string) => ({
-      matches: false,
-      media: query,
-      addEventListener: () => {},
-      removeEventListener: () => {},
-    }),
-  );
-});
 
 const steps: EscrowStep[] = [
   {
