@@ -76,7 +76,7 @@ export const BASE_MDX_COMPONENTS: MDXComponents = {
   a: ({ href, children }) => (
     <a
       href={href}
-      className="font-bold underline decoration-2 underline-offset-4 decoration-theme-primary/40 hover:decoration-theme-primary transition-all text-theme-primary"
+      className="font-bold underline decoration-2 underline-offset-4 decoration-theme-primary/40 hover:decoration-theme-primary transition-colors text-theme-primary"
       target={href?.startsWith("http") ? "_blank" : undefined}
       rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
     >

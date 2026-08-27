@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Download, FileCode2, FileText, Github } from "lucide-react";
 
 import { ExportJSON } from "@/components/docs/ExportJSON";
@@ -22,10 +22,8 @@ function dateStamp() {
 export function DocPageActions({ slug, title, description, markdownContent }: DocPageActionsProps) {
   const [isExportingPdf, setIsExportingPdf] = useState(false);
 
-  const markdownFileName = useMemo(() => `${slug.replace(/\//g, "-")}-${dateStamp()}.md`, [slug]);
-  const pdfFileName = useMemo(() => `${slug.replace(/\//g, "-")}-${dateStamp()}.pdf`, [slug]);
-
   function handleExportMarkdown() {
+    const markdownFileName = `${slug.replace(/\//g, "-")}-${dateStamp()}.md`;
     downloadBlob(markdownFileName, markdownContent, "text/markdown;charset=utf-8");
   }
 
@@ -149,7 +147,7 @@ export function DocPageActions({ slug, title, description, markdownContent }: Do
       await html2pdf()
         .set({
           margin: [10, 10, 10, 10],
-          filename: pdfFileName,
+          filename: `${slug.replace(/\//g, "-")}-${dateStamp()}.pdf`,
           image: { type: "jpeg", quality: 0.98 },
           html2canvas: {
             scale: 2,

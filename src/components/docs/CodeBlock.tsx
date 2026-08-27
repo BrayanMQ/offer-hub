@@ -95,7 +95,7 @@ export function CodeBlock({
     <div
       ref={containerRef}
       className={cn(
-        "relative rounded-3xl overflow-hidden my-10 bg-bg-elevated group transition-all duration-300",
+        "relative rounded-3xl overflow-hidden my-10 bg-bg-elevated group transition-colors duration-300",
         className
       )}
       style={{
@@ -106,7 +106,7 @@ export function CodeBlock({
       {/* Header bar — sunken, clean edges (no border) */}
       <div className="flex items-center justify-between px-6 py-4 rounded-t-3xl bg-bg-sunken shadow-neu-sunken-subtle">
         <div className="flex items-center gap-3.5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-bg-base shadow-neu-raised-sm transition-all duration-300 group-hover:bg-theme-primary/10">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-bg-base shadow-neu-raised-sm transition-colors duration-300 group-hover:bg-theme-primary/10">
             <Code2 size={16} className="text-content-secondary group-hover:text-theme-primary" />
           </div>
           <div>
@@ -122,7 +122,7 @@ export function CodeBlock({
           onClick={handleCopy}
           aria-label={copied ? "Copied" : "Copy code"}
           className={cn(
-            "relative flex items-center gap-2.5 px-4 py-2 rounded-xl text-[10.5px] font-black uppercase tracking-widest transition-all duration-300",
+            "relative flex items-center gap-2.5 px-4 py-2 rounded-xl text-[10.5px] font-black uppercase tracking-widest transition-[color,background-color,transform] duration-300",
             copied
               ? "text-white bg-theme-primary shadow-lg shadow-theme-primary/25"
               : "text-content-secondary bg-bg-base shadow-neu-raised-sm hover:text-content-primary hover:bg-theme-primary/10 active:scale-95"
