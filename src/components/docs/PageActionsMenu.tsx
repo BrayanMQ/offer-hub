@@ -1,15 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, ChevronDown, Copy, ExternalLink } from "lucide-react";
+import { Bot, Check, ChevronDown, Copy, ExternalLink, MessageSquare } from "lucide-react";
 import { logger } from "@/utils/logger";
+import { SITE_URL_FALLBACK } from "@/constants/site";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || SITE_URL_FALLBACK;
 
 interface PageActionsMenuProps {
   slug: string;
+  title: string;
   markdownContent: string;
 }
 
-export function PageActionsMenu({ slug, markdownContent }: PageActionsMenuProps) {
+export function PageActionsMenu({ slug, title, markdownContent }: PageActionsMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,6 +21,10 @@ export function PageActionsMenu({ slug, markdownContent }: PageActionsMenuProps)
   const itemRefs = useRef<Array<HTMLButtonElement | HTMLAnchorElement | null>>([]);
 
   const rawMarkdownUrl = `/docs/${slug}/raw`;
+  const absoluteRawMarkdownUrl = `${SITE_URL}${rawMarkdownUrl}`;
+  const aiPrompt = `Read ${title} at ${absoluteRawMarkdownUrl} and help me understand it.`;
+  const chatGptUrl = `https://chatgpt.com/?q=${encodeURIComponent(aiPrompt)}`;
+  const claudeUrl = `https://claude.ai/new?q=${encodeURIComponent(aiPrompt)}`;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -72,7 +80,7 @@ export function PageActionsMenu({ slug, markdownContent }: PageActionsMenuProps)
     }
   }
 
-  function handleViewAsMarkdown() {
+  function handleExternalLinkClick() {
     closeMenu();
   }
 
@@ -121,11 +129,41 @@ export function PageActionsMenu({ slug, markdownContent }: PageActionsMenuProps)
             target="_blank"
             rel="noopener noreferrer"
             role="menuitem"
-            onClick={handleViewAsMarkdown}
+            onClick={handleExternalLinkClick}
             className="w-full flex items-center gap-2 px-4 py-2 text-sm text-content-primary hover:text-[#149A9B] hover:bg-theme-primary/5 focus-visible:outline-2 focus-visible:outline-theme-primary focus-visible:outline-offset-[-2px]"
           >
             <ExternalLink size={16} />
             <span>View as Markdown</span>
+          </a>
+
+          <a
+            ref={(el) => {
+              itemRefs.current[2] = el;
+            }}
+            href={chatGptUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            role="menuitem"
+            onClick={handleExternalLinkClick}
+            className="w-full flex items-center gap-2 px-4 py-2 text-sm text-content-primary hover:text-[#149A9B] hover:bg-theme-primary/5 focus-visible:outline-2 focus-visible:outline-theme-primary focus-visible:outline-offset-[-2px]"
+          >
+            <MessageSquare size={16} />
+            <span>Open in ChatGPT</span>
+          </a>
+
+          <a
+            ref={(el) => {
+              itemRefs.current[3] = el;
+            }}
+            href={claudeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            role="menuitem"
+            onClick={handleExternalLinkClick}
+            className="w-full flex items-center gap-2 px-4 py-2 text-sm text-content-primary hover:text-[#149A9B] hover:bg-theme-primary/5 focus-visible:outline-2 focus-visible:outline-theme-primary focus-visible:outline-offset-[-2px]"
+          >
+            <Bot size={16} />
+            <span>Open in Claude</span>
           </a>
         </div>
       )}

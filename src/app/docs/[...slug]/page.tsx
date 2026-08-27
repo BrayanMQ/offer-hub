@@ -60,7 +60,7 @@ export default async function DocPage({ params }: PageProps) {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <PageActionsMenu slug={doc.slug} markdownContent={doc.content} />
+            <PageActionsMenu slug={doc.slug} title={doc.frontmatter.title} markdownContent={doc.content} />
             <DocPageActions
               slug={doc.slug}
               title={doc.frontmatter.title}

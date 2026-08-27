@@ -12,8 +12,13 @@ vi.mock("@/utils/logger", () => ({
 }));
 
 function renderMenu(markdownContent = "# Title\n\nBody copy.") {
-  return render(<PageActionsMenu slug="getting-started" markdownContent={markdownContent} />);
+  return render(
+    <PageActionsMenu slug="getting-started" title="Getting Started" markdownContent={markdownContent} />,
+  );
 }
+
+const EXPECTED_PROMPT =
+  "Read Getting Started at https://offer-hub.tech/docs/getting-started/raw and help me understand it.";
 
 async function openMenu(user: ReturnType<typeof userEvent.setup>) {
   const trigger = screen.getByRole("button", { name: /copy page/i });
@@ -41,6 +46,8 @@ describe("PageActionsMenu", () => {
 
     expect(screen.getByRole("menuitem", { name: /copy page/i })).toBeInTheDocument();
     expect(screen.getByRole("menuitem", { name: /view as markdown/i })).toBeInTheDocument();
+    expect(screen.getByRole("menuitem", { name: /open in chatgpt/i })).toBeInTheDocument();
+    expect(screen.getByRole("menuitem", { name: /open in claude/i })).toBeInTheDocument();
   });
 
   it("closes the menu on Escape and returns focus to the trigger", async () => {
@@ -83,10 +90,30 @@ describe("PageActionsMenu", () => {
 
     const copyItem = screen.getByRole("menuitem", { name: /copy page/i });
     const viewItem = screen.getByRole("menuitem", { name: /view as markdown/i });
+    const chatGptItem = screen.getByRole("menuitem", { name: /open in chatgpt/i });
+    const claudeItem = screen.getByRole("menuitem", { name: /open in claude/i });
 
     expect(copyItem).toHaveFocus();
 
     await user.keyboard("{ArrowDown}");
+    expect(viewItem).toHaveFocus();
+
+    await user.keyboard("{ArrowDown}");
+    expect(chatGptItem).toHaveFocus();
+
+    await user.keyboard("{ArrowDown}");
+    expect(claudeItem).toHaveFocus();
+
+    await user.keyboard("{ArrowDown}");
+    expect(copyItem).toHaveFocus();
+
+    await user.keyboard("{ArrowUp}");
+    expect(claudeItem).toHaveFocus();
+
+    await user.keyboard("{ArrowUp}");
+    expect(chatGptItem).toHaveFocus();
+
+    await user.keyboard("{ArrowUp}");
     expect(viewItem).toHaveFocus();
 
     await user.keyboard("{ArrowUp}");
@@ -140,5 +167,54 @@ describe("PageActionsMenu", () => {
     expect(link).toHaveAttribute("href", "/docs/getting-started/raw");
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("links Open in ChatGPT to a prefilled prompt referencing the page", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderMenu();
+
+    await openMenu(user);
+
+    const link = screen.getByRole("menuitem", { name: /open in chatgpt/i });
+    expect(link).toHaveAttribute(
+      "href",
+      `https://chatgpt.com/?q=${encodeURIComponent(EXPECTED_PROMPT)}`,
+    );
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("links Open in Claude to a prefilled prompt referencing the page", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderMenu();
+
+    await openMenu(user);
+
+    const link = screen.getByRole("menuitem", { name: /open in claude/i });
+    expect(link).toHaveAttribute(
+      "href",
+      `https://claude.ai/new?q=${encodeURIComponent(EXPECTED_PROMPT)}`,
+    );
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("closes the menu when clicking Open in ChatGPT or Open in Claude", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderMenu();
+
+    await openMenu(user);
+    await user.click(screen.getByRole("menuitem", { name: /open in chatgpt/i }));
+
+    await waitFor(() => {
+      expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+    });
+
+    await openMenu(user);
+    await user.click(screen.getByRole("menuitem", { name: /open in claude/i }));
+
+    await waitFor(() => {
+      expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+    });
   });
 });
