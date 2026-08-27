@@ -187,8 +187,8 @@ curl -X POST http://localhost:4000/api/v1/orders/ord_xyz789/resolution/dispute \
   -H "Authorization: Bearer ohk_live_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
-    "requestedBy": "usr_buyer123",
-    "reason": "Work not delivered as specified"
+    "openedBy": "BUYER",
+    "reason": "QUALITY_ISSUE"
   }'
 ```
 
@@ -201,7 +201,7 @@ curl -X POST http://localhost:4000/api/v1/disputes/dsp_abc123/resolve \
   -H "Authorization: Bearer ohk_live_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
-    "resolution": "refund",
+    "decision": "FULL_REFUND",
     "note": "Seller did not deliver agreed work"
   }'
 ```

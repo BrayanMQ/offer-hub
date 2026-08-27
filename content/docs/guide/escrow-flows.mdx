@@ -245,8 +245,8 @@ curl -X POST http://localhost:4000/api/v1/orders/ord_xyz789/resolution/dispute \
   -H "Authorization: Bearer ohk_live_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
-    "requestedBy": "usr_buyer123",
-    "reason": "Work delivered does not match agreed specifications"
+    "openedBy": "BUYER",
+    "reason": "QUALITY_ISSUE"
   }'
 ```
 
@@ -259,9 +259,9 @@ Response:
     "status": "DISPUTED",
     "dispute": {
       "id": "dsp_abc123",
-      "reason": "Work delivered does not match agreed specifications",
+      "reason": "QUALITY_ISSUE",
       "openedAt": "2026-03-01T10:00:00.000Z",
-      "openedBy": "usr_buyer123"
+      "openedBy": "BUYER"
     }
   }
 }
@@ -271,8 +271,8 @@ Response:
 
 ```ts
 await sdk.resolution.dispute('ord_xyz789', {
-  requestedBy: 'usr_buyer123',
-  reason: 'Work delivered does not match agreed specifications',
+  openedBy: 'BUYER',
+  reason: 'QUALITY_ISSUE',
 });
 ```
 
@@ -288,11 +288,11 @@ After a dispute is opened, the platform reviews evidence and resolves with a **r
 
 ### Resolution Options
 
-| Resolution | Outcome | On-Chain Transaction |
+| Decision | Outcome | On-Chain Transaction |
 |------------|---------|----------------------|
-| `release` | Funds go to seller | `resolve_dispute` → release |
-| `refund` | Funds return to buyer | `resolve_dispute` → refund |
-| `split` | Custom split between parties | `resolve_dispute` → split |
+| `FULL_RELEASE` | Funds go to seller | `resolve_dispute` → release |
+| `FULL_REFUND` | Funds return to buyer | `resolve_dispute` → refund |
+| `SPLIT` | Custom split between parties | `resolve_dispute` → split |
 
 ### REST — Resolve with Refund
 
@@ -301,7 +301,7 @@ curl -X POST http://localhost:4000/api/v1/disputes/dsp_abc123/resolve \
   -H "Authorization: Bearer ohk_live_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
-    "resolution": "refund",
+    "decision": "FULL_REFUND",
     "note": "Seller did not deliver agreed deliverables"
   }'
 ```
@@ -313,7 +313,7 @@ curl -X POST http://localhost:4000/api/v1/disputes/dsp_abc123/resolve \
   -H "Authorization: Bearer ohk_live_your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
-    "resolution": "release",
+    "decision": "FULL_RELEASE",
     "note": "Evidence confirms work was delivered as agreed"
   }'
 ```
@@ -323,13 +323,13 @@ curl -X POST http://localhost:4000/api/v1/disputes/dsp_abc123/resolve \
 ```ts
 // Resolve in favor of buyer (refund)
 await sdk.disputes.resolve('dsp_abc123', {
-  resolution: 'refund',
+  decision: 'FULL_REFUND',
   note: 'Seller did not deliver agreed deliverables',
 });
 
 // Resolve in favor of seller (release)
 await sdk.disputes.resolve('dsp_abc123', {
-  resolution: 'release',
+  decision: 'FULL_RELEASE',
   note: 'Evidence confirms work was delivered as agreed',
 });
 ```
@@ -380,8 +380,8 @@ curl -X POST http://localhost:4000/api/v1/orders/ord_xyz789/cancel \
 ```ts
 // Step 1: Buyer raises dispute
 await sdk.resolution.dispute('ord_xyz789', {
-  requestedBy: 'usr_buyer123',
-  reason: 'Work not delivered',
+  openedBy: 'BUYER',
+  reason: 'NOT_DELIVERED',
 });
 
 // Step 2: Platform fetches the dispute
@@ -390,7 +390,7 @@ const dispute = disputes[0];
 
 // Step 3: Platform resolves with refund
 await sdk.disputes.resolve(dispute.id, {
-  resolution: 'refund',
+  decision: 'FULL_REFUND',
   note: 'Verified: seller did not deliver',
 });
 

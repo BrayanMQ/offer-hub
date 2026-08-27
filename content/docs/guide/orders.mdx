@@ -219,16 +219,19 @@ Reasons: `NOT_DELIVERED`, `QUALITY_ISSUE`, `OTHER`
 # Full release to seller
 curl -X POST http://localhost:4000/api/v1/disputes/dsp_abc123/resolve \
   -H "Authorization: Bearer ohk_live_..." \
+  -H "Content-Type: application/json" \
   -d '{"decision": "FULL_RELEASE"}'
 
 # Full refund to buyer
 curl -X POST http://localhost:4000/api/v1/disputes/dsp_abc123/resolve \
   -H "Authorization: Bearer ohk_live_..." \
+  -H "Content-Type: application/json" \
   -d '{"decision": "FULL_REFUND"}'
 
 # Split between both
 curl -X POST http://localhost:4000/api/v1/disputes/dsp_abc123/resolve \
   -H "Authorization: Bearer ohk_live_..." \
+  -H "Content-Type: application/json" \
   -d '{
     "decision": "SPLIT",
     "releaseAmount": "80.00",
