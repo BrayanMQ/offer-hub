@@ -67,6 +67,25 @@ export function getDocBySlug(slug: string): DocPage | null {
   };
 }
 
+/** YAML-safe double-quoting for trusted frontmatter values (local .mdx files, not user input). */
+function yamlQuote(value: string): string {
+  return `"${value.replace(/"/g, '\\"')}"`;
+}
+
+/** Serialize a doc's frontmatter + body back into a raw Markdown document. */
+export function getRawMarkdown(slug: string): string | null {
+  const doc = getDocBySlug(slug);
+  if (!doc) return null;
+
+  const { title, description } = doc.frontmatter;
+  const frontmatterLines = [`title: ${yamlQuote(title ?? "")}`];
+  if (description) {
+    frontmatterLines.push(`description: ${yamlQuote(description)}`);
+  }
+
+  return `---\n${frontmatterLines.join("\n")}\n---\n\n${doc.content}`;
+}
+
 /** Build sidebar navigation grouped by section, sorted by order within each section. */
 export function getSidebarNav(): SidebarSection[] {
   if (!fs.existsSync(DOCS_DIR)) return [];
