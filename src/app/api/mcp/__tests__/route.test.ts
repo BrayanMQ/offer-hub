@@ -72,4 +72,12 @@ describe("MCP HTTP Transport", () => {
     const res = await POST(request("POST", "/api/mcp", { jsonrpc: "2.0" }));
     expect([400, 404, 500]).toContain(res.status);
   });
+
+  it("handles DELETE requests to close a session", async () => {
+    // No prior session was initialized, so this should fail gracefully
+    // rather than throwing, exercising the same handleMcpRequest path as
+    // GET/POST.
+    const res = await DELETE(request("DELETE", "/api/mcp"));
+    expect([400, 404, 405]).toContain(res.status);
+  });
 });
