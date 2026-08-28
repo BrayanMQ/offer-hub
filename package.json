@@ -6,7 +6,9 @@
     "mcp"
   ],
   "scripts": {
+    "predev": "node mcp/scripts/sync-shared.mjs",
     "dev": "next dev",
+    "prebuild": "node mcp/scripts/sync-shared.mjs && npx tsx scripts/generate-docs-index.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,8 +17,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "generate:openapi": "npx tsx scripts/generate-openapi.ts",
-    "docs:index": "npx tsx scripts/generate-docs-index.ts",
-    "prebuild": "npx tsx scripts/generate-docs-index.ts"
+    "docs:index": "npx tsx scripts/generate-docs-index.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.97.0",
