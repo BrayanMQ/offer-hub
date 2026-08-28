@@ -235,6 +235,10 @@ Apply Prisma migrations before the first launch (or after pulling a new source r
 
 <CommandLine>npm run prisma:generate && npx prisma migrate deploy --schema packages/database/prisma/schema.prisma</CommandLine>
 
+<Callout type="tip">
+  To understand exactly what gets created — every table, field, and relationship — see the [Data Model](/docs/guide/data-model) reference.
+</Callout>
+
 <Callout type="warning">
   Always back up your database before running migrations in production.
 </Callout>
@@ -476,5 +480,6 @@ docker compose exec redis redis-cli lrange "bull:webhooks:failed" 0 10
 
 - [Configuration](/docs/configuration) — Full environment variable reference
 - [Quick Start](/docs/guide/quick-start) — Make your first API call
+- [Data Model](/docs/guide/data-model) — Every database table and relationship
 - [API Reference](/docs/api-reference/overview) — Explore all endpoints
 - [Real-Time Events & Webhooks](/docs/api-reference/webhooks) — SSE event stream and event catalog
