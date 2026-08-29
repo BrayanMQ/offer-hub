@@ -14,7 +14,7 @@ const PRCard = memo(function PRCard({ pr }: { pr: PullRequestData }) {
   const isMerged = pr.status === 'Merged';
 
   return (
-    <article className="flex flex-col gap-4 rounded-3xl bg-bg-base p-5 shadow-neu-raised-sm hover:shadow-neu-raised transition-all duration-300 group/card">
+    <article className="flex flex-col gap-4 rounded-3xl bg-bg-base p-5 shadow-neu-raised-sm hover:shadow-neu-raised transition-shadow duration-300 group/card">
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-3">
           <div className="mt-1 w-8 h-8 rounded-lg bg-bg-base flex items-center justify-center shadow-neu-sunken-subtle transition-transform group-hover/card:scale-110">
